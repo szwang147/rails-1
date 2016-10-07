@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
  end
 
 
-   end
+
 
 
    def create
@@ -43,6 +43,8 @@ class GroupsController < ApplicationController
     @group.destroy
     redirect_to groups_path, alert: "Group deleted"
   end
+
+
     def join
      @group = Group.find(params[:id])
 
@@ -67,7 +69,9 @@ class GroupsController < ApplicationController
       end
 
       redirect_to group_path(@group)
-    end
+     end
+
+
 
 
 
@@ -85,3 +89,4 @@ class GroupsController < ApplicationController
    def group_params
      params.require(:group).permit(:title, :description)
    end
+ end
